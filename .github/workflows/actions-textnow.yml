@@ -3,16 +3,15 @@ name: py_scripts
 on:
   push:
     branches: [ master ]
-  pull_request:
-    branches: [ master ]
+  #pull_request:
+  #  branches: [ master ]
   schedule:
     # 时间是按UTC设置的，实际执行时间，则自动按东八区执行
     # 即+8小时，故实际执行时间为：8点，20点
     - cron: 0 0,12 * * *
 
 jobs:
-  build:
-
+  textnow:
     runs-on: ubuntu-18.04
     strategy:
       max-parallel: 5
@@ -49,25 +48,7 @@ jobs:
     #- name: Make sure pytest is working
     #  run: |
     #    echo "def test_1(): pass" > nothing.py
-    #    pytest nothing.py
-    
-    # 天翼云盘签到+抽奖
-    - name: Cloud 189 Checkin
-      env:
-        CLOUD189_USER: ${{ secrets.CLOUD189_USER }}
-        CLOUD189_PWD: ${{ secrets.CLOUD189_PWD }}
-      run: |
-        bash scripts/_C189.sh
-    
-    # HostLoc 赚积分
-    - name: 'HostLoc Get points'
-      env:
-        HOSTLOC_COOKIE_SALTKEY : ${{ secrets.HOSTLOC_COOKIE_SALTKEY  }}
-        HOSTLOC_COOKIE_AUTH: ${{ secrets.HOSTLOC_COOKIE_AUTH }}
-        NOTIFY_URL: ${{ secrets.NOTIFY_URL }}
-        HOSTLOC_USERNAME: ${{ secrets.HOSTLOC_USERNAME }}
-        HOSTLOC_PASSWORD: ${{ secrets.HOSTLOC_PASSWORD }}
-      run: python scripts/hostloc/hostloc_get_points.py
+    #    pytest nothing.py    
     
     # TextNow保号任务
     - name: textnow protect number
