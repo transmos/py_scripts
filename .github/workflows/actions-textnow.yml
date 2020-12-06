@@ -1,4 +1,4 @@
-name: py_scripts
+name: 'TextNow Protect Number'
 
 on:
   push:
@@ -51,7 +51,7 @@ jobs:
     #    pytest nothing.py    
     
     # TextNow保号任务
-    - name: textnow protect number
+    - name: TextNow protect number
       env:
         TEXTNOW_USERNAME: ${{ secrets.TEXTNOW_USERNAME }}
         TEXTNOW_PASSWORD: ${{ secrets.TEXTNOW_PASSWORD }}

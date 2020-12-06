@@ -1,4 +1,4 @@
-name: py_scripts
+name: 'HostLoc Get points'
 
 on:
   push:
