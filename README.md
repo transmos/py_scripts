@@ -17,6 +17,7 @@ python脚本集，支持selenium，基于[SeleniumBase](https://github.com/selen
 1. [TextNow保号](<https://github.com/Arronlong/py_scripts/tree/master/scripts/textnow>)
 2. [HostLoc赚积分【基于SeleniumBase】](<https://github.com/Arronlong/py_scripts/tree/master/scripts/hostloc>)（[模拟登陆](https://github.com/Arronlong/py_scripts/blob/master/scripts/hostloc/README_py_login.md)和[基于cookie](https://github.com/Arronlong/py_scripts/blob/master/scripts/hostloc/README_py_cookie.md)的脚本均已失效）
 3. [天翼云盘签到+抽奖](<https://github.com/Arronlong/py_scripts/tree/master/scripts/C189>)
+4. [EUserv续订](<https://github.com/Arronlong/py_scripts/tree/master/scripts/euserv>)
 
 功能对应的参数，请点击后自行查看。
 
@@ -46,6 +47,7 @@ python脚本集，支持selenium，基于[SeleniumBase](https://github.com/selen
 Actions > py_scripts > build  
 能看到如下图所示，表示成功  
 ![](https://cdn.jsdelivr.net/gh/Arronlong/cdn/blogImg/20200707132455.png)
+![](https://cdn.jsdelivr.net/gh/Arronlong/cdn@master/blogImg/20201207094927.png)
 
 此后，将会在每天2:00和14:00各发送一次  
 若有需求，可以在[.github/workflows/actions.yml]中自行修改，**【此配置所有任务共享，修改需谨慎】**

@@ -100,10 +100,10 @@ def check(sess_id, session):
     print("Checking.......")
     d = get_servers(sess_id, session)
     flag = True
-    for key, val in d.items():
-        if val:
+    for k, v in d.items():
+        if v:
             flag = False
-            print("ServerID: %s Renew Failed!" % key)
+            print("ServerID: %s Renew Failed!" % (k.replace(''.join(list(k)[1:-1]),'****')))
     if flag:
         print("ALL Work Done! Enjoy")
 
@@ -129,11 +129,11 @@ if __name__ == "__main__":
         for k, v in SERVERS.items():
             if v:
                 if not renew(sessid, s, passwd_list[i], k):
-                    print("ServerID: %s Renew Error!" % k)
+                    print("ServerID: %s Renew Error!" % (k.replace(''.join(list(k)[1:-1]),'****')))
                 else:
-                    print("ServerID: %s has been successfully renewed!" % k)
+                    print("ServerID: %s has been successfully renewed!" % (k.replace(''.join(list(k)[1:-1]),'****')))
             else:
-                print("ServerID: %s does not need to be renewed" % k)
+                print("ServerID: %s does not need to be renewed" % (k.replace(''.join(list(k)[1:-1]),'****')))
         time.sleep(15)
         check(sessid, s)
         time.sleep(5)
